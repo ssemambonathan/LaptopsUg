@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<laptops>
+
+    <laptop>
+        <id>1</id>
+        <brand>Dell</brand>
+        <model>Latitude 5520</model>
+        <ram>16GB</ram>
+        <storage>512GB SSD</storage>
+        <price>2850000</price>
+        <image>Dell.jpeg</image>
+    </laptop>
+
+    <laptop>
+        <id>2</id>
+        <brand>HP</brand>
+        <model>Pavilion 15</model>
+        <ram>8GB</ram>
+        <storage>256GB SSD</storage>
+        <price>2200000</price>
+        <image>HP.jpeg</image>
+    </laptop>
+
+    <laptop>
+        <id>3</id>
+        <brand>Lenovo</brand>
+        <model>ThinkPad E14</model>
+        <ram>16GB</ram>
+        <storage>512GB SSD</storage>
+        <price>2500000</price>
+        <image>Lenovo.jpeg</image>
+    </laptop>
+
+    <laptop>
+        <id>4</id>
+        <brand>Acer</brand>
+        <model>Aspire 5</model>
+        <ram>8GB</ram>
+        <storage>512GB SSD</storage>
+        <price>2000000</price>
+        <image>Acer.jpeg</image>
+    </laptop>
+
+    <laptop>
+        <id>5</id>
+        <brand>Apple</brand>
+        <model>MacBook Air M1</model>
+        <ram>8GB</ram>
+        <storage>256GB SSD</storage>
+        <price>4200000</price>
+        <image>MacBook.jpeg</image>
+    </laptop>
+
+</laptops>
