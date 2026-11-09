@@ -1,48 +1,58 @@
+<?php
+require __DIR__ . '/auth.php';
+
+session_start();
+
+if (isset($_SESSION['user'])) {
+    redirect('dashboard.php');
+}
+
+$message = $_SESSION['flash']['message'] ?? '';
+$type = $_SESSION['flash']['type'] ?? 'info';
+unset($_SESSION['flash']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Login</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Laptop Store Uganda</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <nav class="navbar">
+        <div class="logo">Laptop Store</div>
+        <ul class="nav-links">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="register.php">Register</a></li>
+        </ul>
+    </nav>
 
-<nav class="navbar">
-    <div class="logo">Laptop Store</div>
+    <main class="page-shell">
+        <div class="form-container">
+            <h2>Login</h2>
+            <p>Login to access your account and track purchases.</p>
 
-    <ul class="nav-links">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="login.php">Login</a></li>
-        <li><a href="register.php">Register</a></li>
-    </ul>
-</nav>
+            <?php if ($message): ?>
+                <div class="flash flash-<?php echo htmlspecialchars($type); ?>"><?php echo htmlspecialchars($message); ?></div>
+            <?php endif; ?>
 
-<div class="form-container">
+            <form action="login_process.php" method="POST" novalidate>
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" placeholder="Email Address" required>
 
-    <h2>Login</h2>
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Password" required>
 
-    <p>
-        Login to access your account and track purchases.
-    </p>
+                <button type="submit">Login</button>
+            </form>
 
-    <form>
-
-        <input type="email"
-               placeholder="Email Address"
-               required>
-
-        <input type="password"
-               placeholder="Password"
-               required>
-
-        <button type="submit">
-            Login
-        </button>
-
-    </form>
-
-</div>
-
+            <p class="form-link">
+                Need an account?
+                <a href="register.php">Create one</a>
+            </p>
+        </div>
+    </main>
 </body>
 </html>
